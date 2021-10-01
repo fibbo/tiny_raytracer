@@ -228,10 +228,40 @@ def load_scene_from_file(file_name):
 
 
 def main():
-    scene = read_scene(
-        "https://gist.githubusercontent.com/fibbo/1cee2353e67dba182f8f3c6d275c23ba/raw/1b43758911f801d2369c59004360e66826832f92/scene_01.txt"
+    ivory = Material(
+        "ivory", 1.0, Vector(0.6, 0.3, 0.1, 0.0), Vector(0.4, 0.4, 0.3), 50
+    )
+    glass = Material(
+        "glass", 1.5, Vector(0.0, 0.5, 0.1, 0.8), Vector(0.6, 0.7, 0.8), 125
+    )
+    red_rubber = Material(
+        "red_rubber", 1.0, Vector(0.9, 0.1, 0.0, 0.0), Vector(0.3, 0.1, 0.1), 10
+    )
+    mirror = Material(
+        "mirror", 1.0, Vector(0.0, 10.0, 0.8, 0.0), Vector(1.0, 1.0, 1.0), 1425
     )
 
+    spheres = [
+        Sphere(Vector(-3, 0, -16), 2, ivory),
+        Sphere(Vector(-1.0, -1.5, -12), 2, glass),
+        Sphere(Vector(1.5, -0.5, -18), 3, red_rubber),
+        Sphere(
+            Vector(
+                7,
+                5,
+                -18,
+            ),
+            4,
+            mirror,
+        ),
+    ]
+
+    lights = [
+        Light(Vector(-20, 20, 20), 1.5),
+        Light(Vector(30, 50, -25), 1.8),
+        Light(Vector(30, 20, 30), 1.7),
+    ]
+    scene = Scene(lights=lights, spheres=spheres)
     print(scene)
     render(scene)
 
