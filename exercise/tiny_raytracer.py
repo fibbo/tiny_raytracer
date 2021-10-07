@@ -43,6 +43,8 @@ class Light(SceneBase):
 
     # TODO: Implement to_json
 
+    # TODO: Implement __eq__
+
     pass
 
 
@@ -62,6 +64,8 @@ class Sphere(SceneBase):
     # TODO: Implement __str__
 
     # TODO: Implement to_json
+
+    # TODO: Implement __eq__
 
     pass
 
@@ -266,4 +270,5 @@ def main():
     render(scene)
 
 
-main()
+if __name__ == "__main__":
+    main()
