@@ -2,7 +2,11 @@ import math
 
 
 class Vector:
-    # TODO: Implement constructor
+    def __init__(self, *args):
+        self.components = []
+        for arg in args:
+            self.components.append(arg)
+        self.size = len(self.components)
 
     # TODO: Implement __str__
 
