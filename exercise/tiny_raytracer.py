@@ -10,6 +10,73 @@ import requests as req
 float_max = sys.float_info.max
 
 
+<<<<<<< HEAD
+=======
+class SceneBase:
+    def __str__(self):
+        raise NotImplementedError(
+            "This function should be implemented in derived classes."
+        )
+
+    def to_json(self):
+        raise NotImplementedError(
+            "This function should be implemented in derived classes."
+        )
+
+    def from_json(self, json):
+        raise NotImplementedError(
+            "This function should be implemented in derived classes."
+        )
+
+
+class Scene(SceneBase):
+    # TODO: Implement constructor
+
+    # TODO: Implement __getitem__
+
+    # TODO: Implement __str__
+
+    # TODO: Implement to_json
+
+    # TODO: Implement from_json
+    pass
+
+
+class Light(SceneBase):
+    # TODO: Implement constructor
+
+    # TODO: Implement __str__
+
+    # TODO: Implement to_json
+
+    # TODO: Implement __eq__
+
+    pass
+
+
+class Material(SceneBase):
+    # TODO: Implement constructor
+
+    # TODO: Implement __str__
+
+    # TODO: Implement to_json
+
+    pass
+
+
+class Sphere(SceneBase):
+    # TODO: Implement constructor
+
+    # TODO: Implement __str__
+
+    # TODO: Implement to_json
+
+    # TODO: Implement __eq__
+
+    pass
+
+
+>>>>>>> 0dc34af6485161dc16af7fc7c2dbc672cc105b70
 def ray_sphere_intersect(origin, direction, sphere):
     l = sphere.center - origin
     tca = l.dot(direction)
